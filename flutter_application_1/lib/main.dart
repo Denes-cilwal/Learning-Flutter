@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 
-// we want to reach out to other file from flutter-framework
-// that gives us class we want to extende below
 void main() {
-// add code that use see in screen,widgets-widget tree
-  runApp(MyApp());
+  runApp(const App());
 }
 
-// Touse widgets we must use class, since
-// widgets is special objects here
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
+
   @override
-  // flutter will call build method and build function returns Widget
-  // since want to see widgets on screen that what build methods return
   Widget build(BuildContext context) {
-    // MaterialApp is a widget provided by material dart
+    var questions = [
+      'what is your favourite color',
+      'What is your favourite game'
+    ];
     return MaterialApp(
-      title: 'Welcome to New Flutter App',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Welcome to Flutter'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
-      ),
+          appBar: AppBar(
+            title: const Text(
+              'Title',
+              textDirection: TextDirection.rtl,
+              textAlign: TextAlign.center,
+            ),
+          ),
+          body: Column(
+            children: const <Widget>[],
+          )),
     );
   }
 }
