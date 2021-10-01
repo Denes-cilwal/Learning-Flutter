@@ -16,20 +16,4 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
-// @override
-//   // flutter will call build method and build function returns Widget
-//   Widget build(BuildContext context) {
-//     // MaterialApp is a widget provided by material dart
-//     return MaterialApp(
-//       title: 'Welcome to New Flutter App',
-//       home: Scaffold(
-//         appBar: AppBar(
-//           title: const Text('Welcome to Flutter'),
-//         ),
-//         body: const Center(
-//           child: Text('Hello World'),
-//         ),
-//       ),
-//     );
-//   }
-//   }
+

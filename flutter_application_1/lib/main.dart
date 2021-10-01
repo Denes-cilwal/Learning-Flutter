@@ -9,22 +9,18 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
-      'what is your favourite color',
-      'What is your favourite game'
-    ];
-    return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text(
-              'Title',
-              textDirection: TextDirection.rtl,
-              textAlign: TextAlign.center,
-            ),
+    return const MaterialApp(
+      title: 'My Flutter App',
+      home: Material(
+        color: Colors.grey,
+        child: Center(
+          child: Text(
+            'hello flutter',
+            textDirection: TextDirection.ltr,
+            style: TextStyle(color: Colors.white, fontSize: 40.0),
           ),
-          body: Column(
-            children: const <Widget>[],
-          )),
+        ),
+      ),
     );
   }
 }
