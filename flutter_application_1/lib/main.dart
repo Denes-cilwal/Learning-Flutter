@@ -9,18 +9,27 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'My Flutter App',
-      home: Material(
-        color: Colors.grey,
-        child: Center(
-          child: Text(
-            'hello flutter',
-            textDirection: TextDirection.ltr,
-            style: TextStyle(color: Colors.white, fontSize: 40.0),
+    return MaterialApp(
+        title: 'My Flutter App',
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text(
+              'My First App Title',
+              style: TextStyle(
+                color: Colors.brown,
+              ),
+            ),
           ),
-        ),
-      ),
-    );
+          body: const Material(
+            color: Colors.grey,
+            child: Center(
+              child: Text(
+                'Hello flutter',
+                textDirection: TextDirection.ltr,
+                style: TextStyle(color: Colors.white, fontSize: 40.0),
+              ),
+            ),
+          ),
+        ));
   }
 }
