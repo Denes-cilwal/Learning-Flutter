@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app_screens/first_screen.dart';
+
+// import 'package:flutter_application_1/app_screens/first_screen.dart';
 
 // void main() => runApp(const App());
 
@@ -27,6 +30,43 @@ import 'package:flutter_application_1/app_screens/first_screen.dart';
 void main() {
   runApp(MaterialApp(
     title: "Exploring UI widgets",
-    home: Home(),
+    home: Scaffold(
+      appBar: AppBar(
+        title: const Text("Basic List View"),
+      ),
+      body: getListView(),
+    ),
   ));
+}
+
+Widget getListView() {
+  var listView = ListView(
+    children: <Widget>[
+      ListTile(
+        leading: const Icon(Icons.landscape),
+        title: const Text("Landscape"),
+        subtitle: const Text("Beautiful View !"),
+        trailing: const Icon(Icons.wb_sunny),
+        onTap: () {
+          debugPrint("Landscape tapped");
+        },
+      ),
+
+      const ListTile(
+        leading: Icon(Icons.laptop_chromebook),
+        title: Text("Windows"),
+      ),
+
+      ListTile(
+        leading: const Icon(Icons.phone),
+        title: Text("Phone"),
+      ),
+
+//      Text("Yet another element in List"),
+
+//      Container(color: Colors.red, height: 50.0,)
+    ],
+  );
+
+  return listView;
 }
