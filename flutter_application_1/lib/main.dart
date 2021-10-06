@@ -5,13 +5,25 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 // ignore: must_be_immutable
-class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+//
 
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+  @override
+  // ignore: no_logic_in_create_state
+  State<StatefulWidget> createState() {
+    return Text(
+      'Creating stateful',
+      textDirection: TextDirection.ltr,
+    );
+  }
+}
+
+class MyAppState extends State<MyApp> {
   var questionIndex = 0;
   void answerQuestions() {
     questionIndex = questionIndex + 1;
