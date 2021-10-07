@@ -1,33 +1,32 @@
-// ignore: avoid_web_libraries_in_flutter
-
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyAppState());
 }
 
-// ignore: must_be_immutable
-//
+// create a class that extends a "statefulWidget" that returns a State in "createState()"
+class MyAppState extends StatefulWidget {
+  const MyAppState({Key? key}) : super(key: key);
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
   @override
-  // ignore: no_logic_in_create_state
   State<StatefulWidget> createState() {
-    return Text(
-      'Creating stateful',
-      textDirection: TextDirection.ltr,
-    );
+    return MyApp();
   }
 }
 
-class MyAppState extends State<MyApp> {
+// create a "state" class with properties that may change
+// within state class implement the build() method
+// call the setState() to make the changes setSTate() to tell framework to redraw widget
+class MyApp extends State<MyAppState> {
   var questionIndex = 0;
+
   void answerQuestions() {
-    questionIndex = questionIndex + 1;
-    print(questionIndex);
+    setState(() {
+      questionIndex = questionIndex + 1;
+      print(questionIndex);
+    });
   }
 
   @override
