@@ -12,20 +12,20 @@ class MyAppState extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return MyApp();
+    return _MyApp();
   }
 }
 
 // create a "state" class with properties that may change
 // within state class implement the build() method
 // call the setState() to make the changes setSTate() to tell framework to redraw widget
-class MyApp extends State<MyAppState> {
-  var questionIndex = 0;
+class _MyApp extends State<MyAppState> {
+  var _questionIndex = 0;
 
   void answerQuestions() {
     setState(() {
-      questionIndex = questionIndex + 1;
-      print(questionIndex);
+      _questionIndex = _questionIndex + 1;
+      print(_questionIndex);
     });
   }
 
@@ -50,7 +50,7 @@ class MyApp extends State<MyAppState> {
               // use instead of harcoded logic
               Text(
                 // questions.elementAt(0),
-                questions[questionIndex],
+                questions[_questionIndex],
               ),
               ElevatedButton(
                 onPressed: answerQuestions,
