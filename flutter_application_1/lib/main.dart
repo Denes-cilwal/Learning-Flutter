@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import './question.dart';
 
 void main() {
   runApp(const MyAppState());
@@ -48,7 +49,7 @@ class _MyApp extends State<MyAppState> {
             children: [
               // const Text('The question!'),
               // use instead of harcoded logic
-              Text(
+              Question(
                 // questions.elementAt(0),
                 questions[_questionIndex],
               ),
